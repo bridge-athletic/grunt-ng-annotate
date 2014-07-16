@@ -1,4 +1,4 @@
-# grunt-ng-annotate
+# BridgeAthletic grunt-ng-annotate
 > Add, remove and rebuild AngularJS dependency injection annotations. Based on [ng-annotate](https://www.npmjs.org/package/ng-annotate).
 
 [![Build Status](https://travis-ci.org/mzgol/grunt-ng-annotate.svg?branch=master)](https://travis-ci.org/mzgol/grunt-ng-annotate)
