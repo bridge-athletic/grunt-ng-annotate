@@ -64,29 +64,25 @@ module.exports = function (grunt) {
                 // Find all files to be annotated and push to this.files
                 function(callback) {
                     async.eachSeries(context.data.paths, function(path, onEach) {
-                        var src = path.src;
-                        var dest = path.dest;
-
                         // grunt.log.error(src + ' --> ' + dest);
 
-                        var finder = findit(src);
+                        // Append '/' to path
+                        path = (path.slice(-1) === '/') ? path : path + '/';
+                            
+                        var finder = findit(path);
                         finder.on('file', function(file, stat) {
                             // grunt.log.error('+++ File: ' + file);
 
-                            // Append '/' to src and dest
-                            src = (src.slice(-1) === '/') ? src : src + '/';
-                            dest = (dest.slice(-1) === '/') ? dest : dest +  '/';
-
                             // Retrieve file name from path
-                            file = file.split(src)[1];
+                            file = file.split(path)[1];
 
                             // Create file object
                             var fileObject = {
-                                src : [src + file],
-                                dest : dest + file,
+                                src : [path + file],
+                                dest : path + file,
                                 orig : {
-                                    src : [src + file],
-                                    dest : dest + file
+                                    src : [path + file],
+                                    dest : path + file
                                 }
                             };
 
