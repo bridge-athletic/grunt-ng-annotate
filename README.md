@@ -78,6 +78,24 @@ The `ngAnnotate` task accepts a couple of options:
 }
 ```
 
+#### Additional BridgeAthletic Options
+
+```js
+{
+    ...
+    
+    // If provided, ngAnnotate recursively finds all files in the src
+    // path, processes each file, and outputs them to the dest path.
+    paths : [
+        {
+            dest : string, 
+            src : string
+        },
+        ...
+    ],
+}
+```
+
 Note that both `add` and `remove` options can be set to true; in such a case `ngAnnotate` first removes
 annotations and then re-adds them (it can be used to check if annotations were provided correctly).
 
