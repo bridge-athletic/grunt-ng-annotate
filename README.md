@@ -84,13 +84,11 @@ The `ngAnnotate` task accepts a couple of options:
 {
     ...
     
-    // If provided, ngAnnotate recursively finds all files in the src
-    // path, processes each file, and outputs them to the dest path.
+    // If provided, ngAnnotate recursively finds all files in the given
+    // path and injects the dependencies in place, overwriting the files
+    // themselves.
     paths : [
-        {
-            dest : string, 
-            src : string
-        },
+        directory/of/files/to/annotate,
         ...
     ],
 }
